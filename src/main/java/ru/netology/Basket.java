@@ -5,17 +5,10 @@ import java.util.Map;
 
 //действия над корзиной
 public class Basket {
-    protected String title;
-    protected int count;
-    protected HashMap<String, Integer> price;
-    HashMap<String, Integer> basket;
-    public Basket(String title, int count, HashMap<String, Integer> price) {
-        this.title = title;
-        this.count = count;
-        this.price = price;
-    }
+    protected Map<String, Integer> price;
+    protected HashMap<String, Integer> basket;
 
-    public Basket(HashMap<String, Integer> price) {
+    public Basket(Map<String, Integer> price) {
         this.price = price;
     }
 
