@@ -20,18 +20,18 @@ public class Main {
 
         System.out.println("Введите два слова: название товара и количество. Или end");
         Scanner scanner = new Scanner(System.in);
-        Purchase purchase = new Purchase(products);
+        Basket basket = new Basket(products);
         while (true) {
             String line = scanner.nextLine();
             if ("end".equals(line)) break;
             String[] parts = line.split(" ");
             String product = parts[0];
             int count = Integer.parseInt(parts[1]);
-            purchase.addPurchase(product, count);
+            basket.addPurchaseInBasket(product, count);
         }
         //подсчет суммы корзины вынесли в отдельный класс, экземляр которого создается
-        //при выборе покупок. Покупаем товары -> взяли корзину -> посчитали сумму
-        long sum = purchase.basket.sum();
+        //при выборе покупок. Взяли корзину -> сложили товар -> посчитали сумму
+        long sum = basket.sum();
         System.out.println("ИТОГО: " + sum);
     }
 }

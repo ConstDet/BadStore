@@ -1,21 +1,15 @@
 package ru.netology;
-
-import java.util.HashMap;
 //действия над покупками
 
 public class Purchase {
-    protected HashMap<String, Integer> price;
+    protected String title;
+    protected int count;
     //магические числа - new Purchase[4]
     //теперь product передается в параметрах конструктора и размер прайса может быть любой
-    protected Basket basket;
 
-    public Purchase(HashMap<String, Integer> price) {
-        this.price = price;
-        basket = new Basket(price);
-    }
-
-    public void addPurchase(String title, int count) {
-        basket.addPurchaseInBasket(title, count);
+    public Purchase(String title, int count) {
+        this.title = title;
+        this.count = count;
     }
 
     //действия над корзиной - принцип единственной ответственности, sum() вынести в отдельный класс
